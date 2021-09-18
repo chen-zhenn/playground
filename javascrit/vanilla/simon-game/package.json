@@ -1,0 +1,22 @@
+{
+  "name": "simon-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "lite-server --baseDir=\"dist\"",
+    "sass": "sass --watch src/style/sass/main.sass dist/css/main.css",
+    "start": "concurrently \"npm run sass\" \"npm run server\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "sass": "^1.41.1"
+  },
+  "dependencies": {
+    "concurrently": "^6.2.1"
+  }
+}
