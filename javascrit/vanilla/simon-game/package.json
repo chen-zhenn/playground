@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "lite-server --baseDir=\"dist\"",
-    "sass": "sass --watch src/style/sass/main.sass dist/css/main.css",
+    "server": "lite-server --baseDir=\"src\"",
+    "sass": "sass --watch src/style/sass/main.sass src/css/main.css",
     "start": "concurrently \"npm run sass\" \"npm run server\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
