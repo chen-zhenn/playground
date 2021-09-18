@@ -1,3 +1,16 @@
+// Forma
+$size-gap: 3.5rem
+
+// Cor
+$color-gray-base: rgba(170, 170, 170, 1)
+$color-gray-mid: rgba(190, 197, 211, 1)
+$color-gray-light: rgba(221, 225, 233, 1)
+$color-black-base: rgba(25, 30, 33, 1)
+$color-yellow-base: rgba(255, 234, 55, 1)
+$color-blue-base: rgba(75,62,221, 1)
+$color-red-base: rgba(255, 0, 0, 1)
+$color-green-base: rgba(62, 221, 75, 1)
+
 *
     margin: 0,
     padding: 0
@@ -5,6 +18,7 @@
 
 html,
 body
+    height: 100%
     font-size: 10px
 
 img
@@ -12,4 +26,164 @@ img
     width: 100%
     border: unset
 
+.bl
+    &-wrap
+        position: relative
+        display: flex
+        height: inherit
+        
+.board
+    $min-size-board: 533px
+    position: relative
+    width: 100%
+    height: 100%
+    margin: auto
 
+    &:after
+        content: ""
+        position: absolute
+        display: none
+        top: 0
+        width: inherit
+        height: inherit
+        z-index: -1
+        border-radius: 50%
+        background-color: $color-black-base
+        transform: scale(1.15)
+
+        @media(min-width: 768px)
+            display: block
+
+    @media(min-width: 768px)
+        width: $min-size-board
+        height: $min-size-board
+        border-radius: 50%
+    @media(min-width: 1439px)
+        transform: scale(1.15)
+    @media(min-width: 1559px)
+        transform: scale(1.3)
+
+.canvas
+    overflow: hidden
+    display: grid
+    grid-template-rows: 1fr max-content
+    width: inherit
+    background-color: $color-black-base
+
+    @media(min-width: 768px)
+        height: inherit
+        border-radius: 50%
+    
+.controller
+    &.-primary
+        min-height: 59vh
+        height: 100%
+    &.-secondary
+        display: grid
+        min-height: 19vh
+        height: 50%
+        align-items: center
+        order: -1
+        background-color: $color-gray-base
+        
+        @media(min-width: 768px)
+            width: 50%
+            height: 50%
+            padding-top: 3rem
+            padding-bottom: 3rem
+            justify-content: center
+            border: solid $size-gap * .75 $color-black-base
+            border-radius: 50%
+            transform: translate3d(50%, 50%, 0) scale(1)
+
+    &.-primary,
+    &.-secondary
+
+        @media(min-width: 768px)
+            grid-row: 1
+            grid-column: 1
+            min-height: unset
+
+    &__section
+        &.-action,
+        &.-menu
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            justify-content: center
+            align-items: center
+        &.-action
+            height: inherit
+            grid-gap: $size-gap
+
+            @media(min-width: 768px)
+                grid-gap: $size-gap * 1.25
+        &.-menu
+            opacity: 1
+
+    &__item
+        cursor: pointer
+        &.-input
+            font-size: 3rem
+        
+    &__label
+        margin-bottom: 1rem
+        font-family: 'Bree Serif', serif
+        font-size: 1.25rem
+        text-align: center
+
+.branding
+    font-family: 'Squada One', cursive
+    font-size: 5.75rem
+    letter-spacing: .25rem
+    text-transform: uppercase
+    text-align: center
+
+.action
+    &__item
+        display: flex
+        height: 100%
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        &.-yellow
+            background-color: $color-yellow-base
+        &.-blue
+            background-color: $color-blue-base
+        &.-red
+            background-color: $color-red-base
+        &.-green
+            background-color: $color-green-base
+
+.levels
+    margin-bottom: .75rem
+    &__item
+        .difficulty &
+            display: grid
+    &__list
+        .difficulty &
+            display: flex
+            justify-content: space-between
+            font-family: 'Bree Serif', serif
+
+.menu
+    &__item
+        display: flex
+        flex-flow: column
+        justify-content: center
+        align-items: center
+        
+        &:after
+            content: ""
+            display: block
+            width: 1.75rem
+            height: 1.75rem
+            margin: .25rem
+            order: -1
+            border: solid 5px $color-black-base
+            border-radius: 50%
+            background-color: $color-yellow-base
+
+        &.-start
+
+            &:after
+                background-color: $color-red-base

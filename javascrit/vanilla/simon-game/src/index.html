@@ -5,9 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon Game - Vanilla JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bree+Serif&family=Squada+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <h1>Simon Game</h1>  
+
+    <!-- #WRAP -->
+    <div class="bl-wrap">
+
+        <div class="bl-container -board board">
+
+            <!-- #CANVAS -->
+            <aside id="canvas" class="bl-canvas canvas">
+
+                <!-- #CANVAS -> SECTION: CONTROLLER [PRIMARY]-->
+                <section class="canvas__section -controller controller -primary">
+                    
+                    <!-- #CONTROLLER -> SECTION: ACTION -->
+                    <section class="controller__section -action action">
+                        <div id="action-yellow" class="controller__item -input  action__item -yellow">1</div>
+                        <div id="action-blue" class="controller__item -input  action__item -blue">2</div>
+                        <div id="action-red" class="controller__item -input  action__item -red">3</div>
+                        <div id="action-green" class="controller__item -input  action__item -green">4</div>
+                    </section>
+                </section>
+
+                <!-- #CANVAS ->  SECTION: CONTROLLER [SECONDARY]-->
+                <section class="canvas__section -controller controller -secondary">
+
+                    <!-- #CONTROLLER -> SECTION: BRANDING -->
+                    <section class="controller__section -levels levels -branding branding">
+                        <section class="levels__section">
+                            <h1 class="bc-heading  branding__title">Simon</h1>
+                        </section>
+                    </section>
+                    
+                    <!-- #CONTROLLER -> SECTION: LEVELS -->
+                    <section class="controller__section -levels levels -difficulty difficulty">
+                        <section class="levels__section">
+                            <div class="levels__item">
+                                <span class="controller__label">Skill Level</span>
+                                <ul class="levels__list">
+                                    <li class="levels__item">1</li>
+                                    <li class="levels__item">2</li>
+                                    <li class="levels__item">3</li>
+                                </ul>
+                                <input type="range" name="ipt-levels" class="controller__item" id="controller-level" min="1" max="3" value="1" step="1">
+                            </div>
+                        </section>
+                    </section>
+
+                    <!-- #CONTROLLER -> SECTION: MENU -->
+                    <section class="controller__section -menu menu">
+                        <div class="controller__item">
+                            <span class="controller__label  menu__item -start">Start</span>
+                        </div>
+                        <div class="controller__item">
+                            <span class="controller__label  menu__item -last">Last</span>
+                        </div>
+                    </section>
+
+                </section>
+
+            </aside> 
+        </div>
+    </div>
+ 
 </body>
 </html>
