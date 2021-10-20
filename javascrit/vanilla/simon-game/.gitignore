@@ -30,3 +30,9 @@ dist
 *.sass.map
 *.scss.map
 
+# Development files
+src/style/css/
+src/style/css/**/*
+src/css/
+src/css/**/*
+
