@@ -25,6 +25,14 @@ $color-red-light-2: rgba(255, 199, 174, 1)
 $color-green-base: rgba(62, 221, 75, 1)
 $color-green-light-2: rgba(207, 255, 205)
 
+%metal-text
+    background: linear-gradient($color-black-base, $color-white, $color-black-base)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+%metal-texture
+  background-image: -webkit-radial-gradient(  50%   0%,  8% 50%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),-webkit-radial-gradient(  50% 100%, 12% 50%, hsla(0,0%,100%,.6) 0%, hsla(0,0%,100%,0) 100%),-webkit-radial-gradient(   0%  50%, 50%  7%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),-webkit-radial-gradient( 100%  50%, 50%  5%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),-webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   3%, hsla(0,0%,  0%,.1) 3.5%),-webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%,.1) 7.5%),-webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.2) 2.2%),-webkit-radial-gradient( 50% 50%, 200% 50%, hsla(0,0%,90%,1) 5%, hsla(0,0%,85%,1) 30%, hsla(0,0%,60%,1) 100%)
+
 *
     margin: 0,
     padding: 0
@@ -34,6 +42,10 @@ html,
 body
     height: 100%
     font-size: 10px
+
+body
+    box-shadow: 0 0 200px rgba(0,0,0,0.9) inset
+    background-image: url('../../assets/img/retina_wood.png')
 
 img
     min-width: 100%
@@ -53,6 +65,7 @@ img
     height: 100%
     margin: auto
 
+    &:before,
     &:after
         content: ""
         position: absolute
@@ -60,13 +73,19 @@ img
         top: 0
         width: inherit
         height: inherit
-        z-index: -1
         border-radius: 50%
         background-color: $color-black-base
         transform: scale(1.15)
+        z-index: -1
 
         @media(min-width: 768px)
             display: block
+
+    &:before        
+        box-shadow: 7px 6px 3px 0 rgb(0, 0, 0, .43)
+        
+
+    &:after
 
     @media(min-width: 768px)
         width: $min-size-board
@@ -84,6 +103,18 @@ img
     width: inherit
     background-color: $color-black-base
 
+    &:before
+        content: ""
+        position: absolute
+        top: 0
+        width: inherit
+        height: inherit
+        background-color: transparent
+        border: solid 1px transparent
+        border-radius: 50%
+        box-shadow: inset 0px 3px 15px 0 rgba(255,255,255,1)
+        transform: scale(1.143)
+
     @media(min-width: 768px)
         height: inherit
         border-radius: 50%
@@ -93,13 +124,25 @@ img
         min-height: 59vh
         height: 100%
     &.-secondary
+        @extend  %metal-texture
+        overflow: hidden
         display: grid
         min-height: 19vh
         height: 50%
-        align-items: center
-        z-index: 2
-        order: -1
+        align-items: center 
+        color: $color-gray-light
         background-color: $color-gray-base
+        order: -1
+        z-index: 2
+
+        &:before
+            content: ""
+            position: absolute
+            top: 0
+            width: 100%
+            height: inherit
+            background-color: $color-black-base
+            z-index: -1
         
         @media(min-width: 768px)
             width: 50%
@@ -153,6 +196,9 @@ img
     letter-spacing: .25rem
     text-transform: uppercase
     text-align: center
+
+    &__title
+        @extend %metal-text
 
 .action
     &__item
