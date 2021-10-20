@@ -4,7 +4,7 @@
 
 ## Visão Geral
 
-Repositório de aplicações ou mini-projetos para colocar em prática o aprendizado sobre determinadas tecnologias bem como seu ecossitema, paradigmas e conceitos ligados ao desenvolvimento.
+Repositório de aplicações ou mini-projetos para colocar em prática o aprendizado sobre determinadas linguagens, tecnologias bem como seu ecossitema, paradigmas e conceitos ligados ao desenvolvimento.
 
 ### Organização
 
